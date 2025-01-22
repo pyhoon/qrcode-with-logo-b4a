@@ -16,7 +16,7 @@ Sub Class_Globals
 	Private xui As XUI 'ignore
 	Public Tag As Object
 	Private QR As QRGenerator
-	Private ImvQR As ImageView
+	Private ImvQR As B4XImageView
 	Private BmpQR As B4XBitmap
 	Private BmpLogo As B4XBitmap
 	Private mShowLogo As Boolean
@@ -41,9 +41,9 @@ Public Sub DesignerCreateView (Base As Object, Lbl As Label, Props As Map)
 	mShowLogo = Props.GetDefault("ShowLogo", False)
 	mSelectedLogo = Props.GetDefault("SelectedLogo", "B4X")
 	mLogoAlpha = Props.GetDefault("LogoAlpha", 255)
-	ImvQR.Initialize("")
-	mBase.AddView(ImvQR, 0, 0, mBase.Width, mBase.Height)
-	QR.Initialize(ImvQR.Width)
+	ImvQR = XUIViewsUtils.CreateB4XImageView
+	mBase.AddView(ImvQR.mBase, 0, 0, mBase.Width, mBase.Height)
+	QR.Initialize(ImvQR.mBase.Width)
 	LoadSelectedLogo
 End Sub
 
@@ -85,7 +85,7 @@ Public Sub Create (Text As String)
 	BmpQR = QR.Create(Text)
 	
 	If mShowLogo Then
-		ImvQR.Bitmap = QR.AddBitmap(BmpQR, BmpLogo, mLogoAlpha).Resize(ImvQR.Width, ImvQR.Height, True)
+		ImvQR.Bitmap = QR.AddBitmap(BmpQR, BmpLogo, mLogoAlpha).Resize(ImvQR.mBase.Width, ImvQR.mBase.Height, True)
 	Else
 		ImvQR.Bitmap = BmpQR
 	End If
