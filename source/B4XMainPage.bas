@@ -9,7 +9,7 @@ Version=9.85
 'Ctrl + click to sync files: ide://run?file=%WINDIR%\System32\Robocopy.exe&args=..\..\Shared+Files&args=..\Files&FilesSync=True
 #End Region
 
-'Ctrl + click to export as zip: ide://run?File=%B4X%\Zipper.jar&Args=Example2.zip
+'Ctrl + click to export as zip: ide://run?File=%B4X%\Zipper.jar&Args=project.zip
 
 Sub Class_Globals
 	Private Root As B4XView
