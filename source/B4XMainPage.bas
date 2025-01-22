@@ -14,7 +14,7 @@ Version=9.85
 Sub Class_Globals
 	Private Root As B4XView
 	Private xui As XUI
-	Private QRLogo As QRCodeWithLogo
+	Private QRLogo As QRCodeLogo
 End Sub
 
 Public Sub Initialize
@@ -28,5 +28,5 @@ Private Sub B4XPage_Created (Root1 As B4XView)
 	QRLogo.LogoAlpha = 210
 	QRLogo.SelectedLogo = QRLogo.OCTOCAT
 	QRLogo.CustomLogo = xui.LoadBitmapResize(File.DirAssets, "duck.png", 200dip, 200dip, True)
-	QRLogo.Create("https://ul.waze.com/ul?venue_id=66650143.666566970.7021126&overview=yes")
+	QRLogo.Create("https://github.com/pyhoon/qrcode-with-logo-b4a")
 End Sub
