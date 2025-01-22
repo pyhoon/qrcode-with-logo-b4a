@@ -1,0 +1,4 @@
+Version=1.00
+Author=Aeric Poon
+DependsOn=BitmapCreator,ByteConverter
+Supported Platforms=B4A
